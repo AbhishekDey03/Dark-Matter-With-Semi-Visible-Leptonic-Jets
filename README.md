@@ -19,7 +19,7 @@ This repository documents the work completed during my ATLAS Summer Internship, 
 To use the scripts in this repository, the following tools are required:
 
 - **ROOT**: Essential for processing and analyzing ROOT files. Instructions for installation can be found at [ROOT CERN](https://root.cern/install/).
-- **FastJet**: Needed for jet clustering algorithms. Installation details are available at [FastJet](http://fastjet.fr/).
+- **FastJet**: Needed for jet clustering algorithms. Installation details are available at [FastJet](http://fastjet.fr/)[2].
 - **bash**: For executing shell scripts.
 - It is recommended to use an lxplus environment to ensure compatibility.
 
@@ -34,7 +34,7 @@ chmod +x run_analyses_using_event_weights.sh
 
 ## Usage
 
-The analysis workflow begins with calculating event weights using the `calculate_event_weights.sh` script. This script processes ROOT files containing event data, computing weights based on factors such as cross-section, k-factor, filter efficiency, and luminosity. The computed weights are stored in an `event_weights.txt` file. Before running this script, ensure the `base_path` variable within the script is set to the correct directory containing your ROOT files. Here is an example of the tree that is used in this analysis:
+The analysis workflow begins with calculating event weights using the `calculate_event_weights.sh` script. This script processes ROOT files containing event data, computing weights based on factors such as cross-section, k-factor, filter efficiency, and luminosity, as found in [3]. The computed weights are stored in an `event_weights.txt` file. Before running this script, ensure the `base_path` variable within the script is set to the correct directory containing your ROOT files. Here is an example of the tree that is used in this analysis:
 
 ```
 ├── 700323
@@ -97,4 +97,6 @@ hadd -f all_background.root *.root
 
 [1]: C. Cazzaniga and A. de Cosa, “Leptons lurking in semi-visible jets at the LHC,” The European Physical Journal C, 82, 10.1140/epjc/s10052-022-10775-2 (2022).
 
-[2]: M. Cacciari, G. P. Salam, and G. Soyez, “Fastjet user manual”, European Physical Journal C 72, 1896 (2012)
+[2]: M. Cacciari, G. P. Salam, and G. Soyez, “Fastjet user manual”, European Physical Journal C 72, 1896 (2012).
+
+[3] J. McFayden “PMG MC20 13TeV Central Page”, ATLAS Twiki Portal [CentralMC20ProductionListNew](https://twiki.cern.ch/twiki/bin/viewauth/AtlasProtected/CentralMC20ProductionListNew) (2024-7-12).
